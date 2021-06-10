@@ -1,1 +1,1 @@
-# jeju_map
+# jeju_ground_map
