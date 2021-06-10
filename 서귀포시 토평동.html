@@ -1,0 +1,117 @@
+<!DOCTyPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-eqiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+         <h1> 서귀포시 토평동(단위:만원) </h1>
+
+<canvas id="myChart" width="700" height="400"></canvas>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+
+<script>
+    var data =
+    {
+        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017","2018","2019", "2020"],
+        datasets:
+            [{
+                label: "My First dataset",
+                fillColor: "rgba(150,200,250,0.5)",
+                strokeColor: "rgba(150,200,250,0.8)",
+                highlightFill: "rgba(150,200,250,0.75)",
+                highlightStroke: "rgba(150,200,250,1)",
+                data: [10337, 9697,	12374,	11337,	19857,	24166,	29885,	21594,	27486,	18077,	27808
+
+
+
+
+]
+            }]
+    };
+
+    var options = { animation: false };
+    var ctx = $('#myChart').get(0).getContext('2d');
+    var myBarChart = new Chart(ctx).Bar(data, options); 
+</script>
+
+</body>
+
+
+<head>
+  <h2> 토평동 토지면적과 용도지역 수</h2>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+      google.charts.setOnLoadCallback(drawChart2);
+     
+      function drawChart1() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string','면적');
+        data.addColumn('number','면적수');
+        data.addRows([
+       ['1~100(㎡)',     25],
+          ['100~500(㎡)',      48],
+          ['500~1000(㎡)',      29],
+          ['1000~5000(㎡)',      53],
+          ['5000~10000(㎡)',     7],
+          ['10000~50000(㎡)',     18],
+          ['50000~100000(㎡)',     0],
+          ['100000(㎡)이상',     0],
+        ]);
+
+        var options = {title: '2010-2020 면적 평균값 토평동',
+          width:600,
+          height:500};
+
+        var chart = new google.visualization.PieChart(document.getElementById('drawChart1_div'));
+
+        chart.draw(data, options);
+      }
+
+      function drawChart2() {
+
+   var data = new google.visualization.DataTable();
+        data.addColumn('string','용도지역');
+        data.addColumn('number','용도지역 수');
+        data.addRows([
+ 
+
+           ['관리지역',    1], 
+         ['보전관리지역',    1],
+       ['보전녹지지역',    6],
+      ['생산관리지역',    8],
+     ['자연녹지지역',    133],
+   ['제2종일반주거지역',     11],
+   ['준공업지역',    4]
+
+             ]);
+  
+
+
+var options = {title: '2010-2020 용도지역 평균값 토평동',
+  width: 600,
+  height: 500};
+
+var chart = new google.visualization.PieChart(document.getElementById('drawChart2_div'));
+
+chart.draw(data, options);
+      }
+
+    </script>
+    </head>
+    <body>
+      <table class="columns">
+        <tr>
+          <td><div id="drawChart1_div" style="border: 1px solid #ccc"</div></td>
+            <td><div id="drawChart2_div" style="border: 1px solid #ccc"</div></td>
+          </tr>
+      </table>
+    </body>
+
+</html>

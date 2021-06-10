@@ -1,0 +1,565 @@
+<!DOCTyPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-eqiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+
+
+
+</head>
+    <body>
+         <h1> 제주 땅 값 </h1>
+         <!-- 지도를 표시할 div 입니다 -->
+         <div id="map" style="width:100%;height:650px;"></div>
+
+       
+         <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=0ebb5c1232001f60dc4a41c8ccdbc546"></script>
+        
+          <script>
+  
+         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+             mapOption = { 
+                 center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                 level: 10 // 지도의 확대 레벨
+             };
+         
+             var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+ 
+ // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+ var positions = [
+     {
+         title: '<div><a href="서귀포시 강정동.html" target="_blank" class="link">서귀포시 강정동</a></div>',
+         
+         latlng: new kakao.maps.LatLng(33.261927, 126.494053
+)
+     },
+     {
+        title: '<div><a href="서귀포시 남원읍.html" target="_blank" class="link">서귀포시 남원읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.330214, 126.673177
+)
+     },
+     {
+        title: '<div><a href="서귀포시 대정읍.html" target="_blank" class="link">서귀포시 대정읍</a></div>', 
+         latlng: new kakao.maps.LatLng(33.243832, 126.251530
+)
+     },
+     {
+        title: '<div><a href="서귀포시 대포동.html" target="_blank" class="link">서귀포시 대포동</a></div>',
+         latlng: new kakao.maps.LatLng(33.304952, 126.455440
+)
+     },
+     {
+        title: '<div><a href="서귀포시 도순동.html" target="_blank" class="link">서귀포시 도순동</a></div>',
+         latlng: new kakao.maps.LatLng(33.283772, 126.480352
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 법환동.html" target="_blank" class="link">서귀포시 동홍동</a></div>',
+         latlng: new kakao.maps.LatLng(33.271922, 126.563763
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 보목동.html" target="_blank" class="link">서귀포시 법환동</a></div>',
+         latlng: new kakao.maps.LatLng(33.242742, 126.513158
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 상예동.html" target="_blank" class="link">서귀포시 보목동</a></div>',
+         latlng: new kakao.maps.LatLng(33.246058, 126.600996
+         )
+     },
+     {
+        title: '<div><a href="" target="_blank" class="link">서귀포시 상예동</a></div>',
+         latlng: new kakao.maps.LatLng(33.271267, 126.386000
+        
+ )
+     },
+     {
+        title: '<div><a href="서귀포시 상효동.html" target="_blank" class="link">서귀포시 상효동</a></div>',
+         latlng: new kakao.maps.LatLng(33.314848, 126.582724
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 색달동.html" target="_blank" class="link">서귀포시 색달동</a></div>',
+         latlng: new kakao.maps.LatLng(33.280586, 126.410933
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 서귀동.html" target="_blank" class="link">서귀포시 서귀동</a></div>',
+         latlng: new kakao.maps.LatLng(33.247209, 126.564430
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 서호동.html" target="_blank" class="link">서귀포시 서호동</a></div>',
+         latlng: new kakao.maps.LatLng(33.291145, 126.515530
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 서홍동.html" target="_blank" class="link">서귀포시 서홍동</a></div>',
+         latlng: new kakao.maps.LatLng(33.279649, 126.546579
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 성산읍.html" target="_blank" class="link">서귀포시 성산읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.420781, 126.864994
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 신효동.html" target="_blank" class="link">서귀포시 신효동</a></div>',
+         latlng: new kakao.maps.LatLng(33.265598, 126.610225
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 안덕면.html" target="_blank" class="link">서귀포시 안덕면</a></div>',
+         latlng: new kakao.maps.LatLng(33.289555, 126.340328
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 영남동.html" target="_blank" class="link">서귀포시 영남동</a></div>',
+         latlng: new kakao.maps.LatLng(33.313935, 126.502136
+
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 월평동.html" target="_blank" class="link">서귀포시 월평동</a></div>',
+         latlng: new kakao.maps.LatLng(33.244580, 126.463378
+
+
+)
+     },
+     { title: '<div><a href="서귀포시 중문동.html" target="_blank" class="link">서귀포시 중문동</a></div>',
+         latlng: new kakao.maps.LatLng(33.308151, 126.447567
+
+
+)
+     },
+     { title: '<div><a href="서귀포시 토평동.html" target="_blank" class="link">서귀포시 토평동</a></div>',
+         latlng: new kakao.maps.LatLng(33.283820, 126.579969
+
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 표선면.html" target="_blank" class="link">서귀포시 표선면</a></div>',
+         latlng: new kakao.maps.LatLng(33.356024, 126.778187
+
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 하예동.html" target="_blank" class="link">서귀포시 하예동</a></div>',
+         latlng: new kakao.maps.LatLng(33.238544, 126.379566
+
+
+)
+     },
+     { title: '<div><a href="서귀포시 하원동.html" target="_blank" class="link">서귀포시 하원동</a></div>',
+         latlng: new kakao.maps.LatLng(33.282020, 126.462636
+
+
+)
+     },
+     {title: '<div><a href="서귀포시 하효동.html" target="_blank" class="link">서귀포시 하효동</a></div>',
+         latlng: new kakao.maps.LatLng(33.250446, 126.615931
+
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 호근동.html" target="_blank" class="link">서귀포시 호근동</a></div>',
+         latlng: new kakao.maps.LatLng(33.259863, 126.532715
+
+
+)
+     },
+     {
+        title: '<div><a href="서귀포시 회수동.html" target="_blank" class="link">서귀포시 회수동</a></div>',
+         latlng: new kakao.maps.LatLng(33.275692, 126.444624
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 건입동.html" target="_blank" class="link">제주시 건입동</a></div>',
+         latlng: new kakao.maps.LatLng(33.515491, 126.544298
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 구좌읍.html" target="_blank" class="link">제주시 구좌읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.524641, 126.781773
+
+
+)
+     },
+     {
+        
+        title: '<div><a href="제주시 내도동.html" target="_blank" class="link">제주시 내도동</a></div>',
+         latlng: new kakao.maps.LatLng(33.489714, 126.442828
+
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 노형동.html" target="_blank" class="link">제주시 노형동</a></div>',
+         latlng: new kakao.maps.LatLng(33.476604, 126.473114
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도남동.html" target="_blank" class="link">제주시 도남동</a></div>',
+         latlng: new kakao.maps.LatLng(33.488933, 126.524939
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도두이동.html" target="_blank" class="link">제주시 도두이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.502154, 126.483855
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도두일동.html" target="_blank" class="link">제주시 도두일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.500041, 126.470490
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도련이동.html" target="_blank" class="link">제주시 도련이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.514332, 126.594586
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도련일동.html" target="_blank" class="link">제주시 도련일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.505248, 126.588385
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 도평동.html" target="_blank" class="link">제주시 도평동</a></div>',
+         latlng: new kakao.maps.LatLng(33.478047, 126.451557
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 봉개동.html" target="_blank" class="link">제주시 봉개동</a></div>',
+         latlng: new kakao.maps.LatLng(33.463548, 126.618467
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼도이동.html" target="_blank" class="link">제주시 심도이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.512325, 126.521106
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼도일동.html" target="_blank" class="link">제주시 삼도일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.502295, 126.519223
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼양삼동.html" target="_blank" class="link">제주시 심양삼동</a></div>',
+         latlng: new kakao.maps.LatLng(33.522981, 126.576909
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼양이동.html" target="_blank" class="link">제주시 삼양이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.521187, 126.584181
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼양일동.html" target="_blank" class="link">제주시 삼양일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.524053, 126.594403
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 삼양일동.html" target="_blank" class="link">제주시 아라이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.476612, 126.554367
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 아라일동.html" target="_blank" class="link">제주시 아라일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.453881, 126.556276
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 애월읍.html" target="_blank" class="link">제주시 애월읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.419708, 126.384011
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 연동.html" target="_blank" class="link">제주시 연동</a></div>',
+         latlng: new kakao.maps.LatLng(33.456354, 126.494344
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 영평동.html" target="_blank" class="link">제주시 영평동</a></div>',
+         latlng: new kakao.maps.LatLng(33.427399, 126.575719
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 오등동.html" target="_blank" class="link">제주시 오등동</a></div>',
+         latlng: new kakao.maps.LatLng(33.444642, 126.535643
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 오라삼동.html" target="_blank" class="link">제주시 오라삼동</a></div>',
+         latlng: new kakao.maps.LatLng(33.495500, 126.505391
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 오라이동.html" target="_blank" class="link">제주시 오라이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.433612, 126.513377
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 오라일동.html" target="_blank" class="link">제주시 오라일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.495639, 126.516170
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 외도이동.html" target="_blank" class="link">제주시 외도이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.494184, 126.432655
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 외도일동.html" target="_blank" class="link">제주시 외도일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.482381, 126.430609
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 용강동.html" target="_blank" class="link">제주시 용강동</a></div>',
+         latlng: new kakao.maps.LatLng(33.449414, 126.596188
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 용담삼동.html" target="_blank" class="link">제주시 용담삼동</a></div>',
+         latlng: new kakao.maps.LatLng(33.516344, 126.491401
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 용담이동.html" target="_blank" class="link">제주시 용담이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.506546, 126.498587
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 용담일동.html" target="_blank" class="link">제주시 용담일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.509377, 126.514527
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 우도면.html" target="_blank" class="link">제주시 우도면</a></div>',
+         latlng: new kakao.maps.LatLng(33.504448, 126.957043
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 월평동.html" target="_blank" class="link">제주시 월평동</a></div>',
+         latlng: new kakao.maps.LatLng(33.451223, 126.580011
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 이도이동.html" target="_blank" class="link">제주시 이도이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.498270, 126.537874
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 이도일동.html" target="_blank" class="link">제주시 이도일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.505274, 126.527859
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 이호이동.html" target="_blank" class="link">제주시 이호이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.492329, 126.459772
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 이호일동.html" target="_blank" class="link">제주시 이호일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.498248, 126.460895
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 일도이동.html" target="_blank" class="link">제주시 일도이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.506294, 126.540887
+
+            
+)
+     },
+     {
+        title: '<div><a href="제주시 일도일동.html" target="_blank" class="link">제주시 일도일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.513627, 126.527256
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 조천읍.html" target="_blank" class="link">제주시 조천읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.485142, 126.666523
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 추자면.html" target="_blank" class="link">제주시 추자면</a></div>',
+         latlng: new kakao.maps.LatLng(33.947406, 126.319255
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 한경면.html" target="_blank" class="link">제주시 한경면</a></div>',
+         latlng: new kakao.maps.LatLng(33.328190, 126.217149
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 한립읍.html" target="_blank" class="link">제주시 한림읍</a></div>',
+         latlng: new kakao.maps.LatLng(33.376880, 126.289488
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 해안동.html" target="_blank" class="link">제주시 해안동</a></div>',
+         latlng: new kakao.maps.LatLng(33.436675, 126.468156
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 화북이동.html" target="_blank" class="link">제주시 화북이동</a></div>',
+         latlng: new kakao.maps.LatLng(33.502936, 126.563922
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 화북일동.html" target="_blank" class="link">제주시 화북일동</a></div>',
+         latlng: new kakao.maps.LatLng(33.519437, 126.565125
+
+
+)
+     },
+     {
+        title: '<div><a href="제주시 회천동.html" target="_blank" class="link">제주시 회천동</a></div>',
+         latlng: new kakao.maps.LatLng(33.464040, 126.630092
+
+
+)
+     }
+ ];
+
+ for(let i=0; i < positions.length; i++){
+    var data = positions[i];
+    displayMarker(data);
+}
+
+// 지도에 마커를 표시하는 함수입니다    
+function displayMarker(data) { 
+    var marker = new kakao.maps.Marker({
+        map: map,
+        position: data.latlng
+    });
+    var overlay = new kakao.maps.CustomOverlay({
+        yAnchor: 5,
+        position: marker.getPosition()
+    });
+    
+    var content = document.createElement('div');
+    content.innerHTML =  data.title;
+    content.style.cssText = 'background: white; border: 1px solid black';
+    
+    var closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '닫기';
+    closeBtn.onclick = function () {
+        overlay.setMap(null);
+    };
+    content.appendChild(closeBtn);
+    overlay.setContent(content);
+
+    kakao.maps.event.addListener(marker, 'click', function() {
+        overlay.setMap(map);
+    });
+}
+</script>
+ 
+
+    </body>
+</html>

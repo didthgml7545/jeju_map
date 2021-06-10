@@ -1,0 +1,111 @@
+<!DOCTyPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-eqiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+         <h1> 서귀포시 서홍동(단위:만원) </h1>
+
+<canvas id="myChart" width="700" height="400"></canvas>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+
+<script>
+    var data =
+    {
+        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017","2018","2019", "2020"],
+        datasets:
+            [{
+                label: "My First dataset",
+                fillColor: "rgba(150,200,250,0.5)",
+                strokeColor: "rgba(150,200,250,0.8)",
+                highlightFill: "rgba(150,200,250,0.75)",
+                highlightStroke: "rgba(150,200,250,1)",
+                data: [15056,	10627,	8416,	12925,	15983,	20810,	25232,	9630,	21110,	14306,	27346
+
+
+
+]
+            }]
+    };
+
+    var options = { animation: false };
+    var ctx = $('#myChart').get(0).getContext('2d');
+    var myBarChart = new Chart(ctx).Bar(data, options); 
+</script>
+
+</body>
+
+<<head>
+  <h2>서홍동 토지면적과 용도지역 수</h2>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart1);
+      google.charts.setOnLoadCallback(drawChart2);
+     
+      function drawChart1() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string','면적');
+        data.addColumn('number','면적수');
+        data.addRows([
+        
+['1~100(㎡)',     34],
+          ['100~500(㎡)',      42],
+          ['500~1000(㎡)',      20],
+          ['1000~5000(㎡)',      29],
+          ['5000~10000(㎡)',     4],
+          ['10000~50000(㎡)',     10],
+          ['50000~100000(㎡)',     0],
+          ['100000(㎡)이상',     0],
+        ]);
+        var options = {title: '2010-2020 면적 평균값 서홍동',
+          width:600,
+          height:500};
+
+        var chart = new google.visualization.PieChart(document.getElementById('drawChart1_div'));
+
+        chart.draw(data, options);
+      }
+
+      function drawChart2() {
+
+   var data = new google.visualization.DataTable();
+        data.addColumn('string','용도지역');
+        data.addColumn('number','용도지역 수');
+        data.addRows([
+         ['보전녹지지역',    8],  
+        ['일반상업지역',    1],    
+       ['자연녹지지역',    81],
+ ['제2종일반주거지역',     30],
+     ['준주거지역',    8]
+       
+            ]);
+  
+
+
+var options = {title: '2010-2020 용도지역 평균값 서홍동',
+  width: 600,
+  height: 500};
+
+var chart = new google.visualization.PieChart(document.getElementById('drawChart2_div'));
+
+chart.draw(data, options);
+      }
+
+    </script>
+    </head>
+    <body>
+      <table class="columns">
+        <tr>
+          <td><div id="drawChart1_div" style="border: 1px solid #ccc"</div></td>
+            <td><div id="drawChart2_div" style="border: 1px solid #ccc"</div></td>
+          </tr>
+      </table>
+    </body>
+
+</html>
